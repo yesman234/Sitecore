@@ -10,6 +10,7 @@
   "author": "Marcellus Jones",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "sequelize": "^5.10.1"
   }
 }
