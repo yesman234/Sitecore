@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+  <script src="https://code.jquery.com/jquery.js"></script>
+
+  <link rel="stylesheet" type="text/css" src="styles.css">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg">
+        <div class="card">
+          <div class="card-header" style="background-color:black;color:white">
+            <i class="fa fa-align-justify" id="date"></i> Release Web HotFix</div>
+          <div class="card-header">
+            <i class="fa fa-align-justify"></i>Sitecore Release Scorecard</div>
+          <div class="card-body">
+
+            <table class="table table-responsive-sm">
+              <thead>
+                <tr>
+                  <th>Step</th>
+                  <th>Score</th>
+                  <th>Exception(1 or 0)</th>
+                </tr>
+              </thead>
+              <!-- wwrap entire table in form  -->
+              <thead style="background-color:black;color:white" class="card-header">
+                <tr>
+                  <th>3 Days Prior <i>(Thursday on normal release pattern)</i></th>
+                </tr>
+              </thead>
+              <form id="form">
+                <tr>
+                  <td>Web Team representative for escalation chosen</td>
+                  <td> <select class="Score">
+                      <option value="0">0</option>
+                      <option value="1">1</option>>1</td>
+                  </select>
+                  <td form action="/html/tags/html_form_tag_action.cfm" method="post">
+                    <form>
+                      <textarea name="comment" id="note" style="font-family:sans-serif;font-size:1.2em;">
+                            </textarea>
+
+
+                  </td>
+                </tr>
+                <tr>
+                  <td>Content/CMS Freeze (EoD)</td>
+                  <td> <select class="Score">
+                      <option value="0">0</option>
+                      <option value="1">1</option>>1</td>
+                  <td form action="/html/tags/html_form_tag_action.cfm" method="post">
+                    <div>
+                      <textarea name="comment" id="note1" style="font-family:sans-serif;font-size:1.2em;">
+                            </textarea>
+                    </div>
+
+                  </td>
+                </tr>
+                <tr>
+                  <thead>
+                    <tr>
+                      <th style="background-color:black;color:white" class="card-header">2 Days Prior <i>(Friday on
+                          normal release pattern)</i></th>
+                    </tr>
+                  </thead>
+                </tr>
+                <tr>
+                  <td>Complete rollback package from master + TDS sync (11AM completion)</td>
+                  <td> <select class="Score">
+                      <option value="0">0</option>
+                      <option value="1">1</option>>1</td>
+                  <td form action="/html/tags/html_form_tag_action.cfm" method="post">
+                    <div>
+                      <textarea name="comment" id="note2" style="font-family:sans-serif;font-size:1.2em;">
+                                  </textarea>
+                    </div>
+
+                  </td>
+                </tr>
+                <tr>
+                  <td>Validate freeze was adhered to after TDS sync</td>
+                  <td> <select class="Score">
+                      <option value="0">0</option>
+                      <option value="1">1</option>>1</td>
+                  <td form action="/html/tags/html_form_tag_action.cfm" method="post">
+                    <div>
+                      <textarea name="comment" id="note3" style="font-family:sans-serif;font-size:1.2em;">
+                                  </textarea>
+                    </div>
+
+                  </td>
+                </tr>
+                <tr>
+                  <td>Deploy rollback package to QA, and test it (2PM completion) (If all goes well, we won't need
+                    this package, but it must be tested in case release package breaks in Production.)</td>
+                  <td> <select class="Score">
+                      <option value="0">0</option>
+                      <option value="1">1</option>>1</td>
+                  <td form action="/html/tags/html_form_tag_action.cfm" method="post">
+                    <div>
+                      <textarea name="comment" id="note4" style="font-family:sans-serif;font-size:1.2em;">
+                                  </textarea>
+                    </div>
+
+                  </td>
+                </tr>
+                <tr>
+                  <td>In subtask of the CHG identify yourself as the escalation person if there are any issues with
+                    the release.</td>
+                  <td> <select class="Score">
+                      <option value="0">0</option>
+                      <option value="1">1</option>>1</td>
+                  <td form action="/html/tags/html_form_tag_action.cfm" method="post">
+                    <div>
+                      <textarea name="comment" id="note5" style="font-family:sans-serif;font-size:1.2em;">
+                                  </textarea>
+                    </div>
+
+                  </td>
+                </tr>
+                <thead>
+                  <tr>
+                    <th style="background-color:black;color:white" class="card-header">Day Before <i>(Mondays on normal
+                        release pattern)</i></th>
+                  </tr>
+                </thead>
+                <tr>
+                  <td>QA Certify release package (CoB)</td>
+                  <td> <select class="Score">
+                      <option value="0">0</option>
+                      <option value="1">1</option>>1</td>
+                  <td form action="/html/tags/html_form_tag_action.cfm" method="post">
+                    <div>
+                      <textarea name="comment" id="note6" style="font-family:sans-serif;font-size:1.2em;">
+                                  </textarea>
+                    </div>
+
+                  </td>
+                </tr>
+                <thead>
+                  <tr>
+                    <th style="background-color:black;color:white" class="card-header">Day Before <i>(Tuesdays on normal
+                        release pattern)</i></th>
+                  </tr>
+                </thead>
+                <tr>
+                  <td>Enter <strong>Master & Release</strong> package version numbers in the "Implementation Tasks"
+                    field of the RBR
+                    (Don't add time)</td>
+                  <td> <select class="Score" id="option1">
+                      <option value="0">0</option>
+                      <option value="1">1</option>>1</td>
+                  <td form action="/html/tags/html_form_tag_action.cfm" id="commentUserInput" method="post">
+                    <div>
+                      <textarea name="comment" id="note7" style="font-family:sans-serif;font-size:1.2em;">
+                                  </textarea>
+                    </div>
+
+                  </td>
+                </tr>
+                <tr>
+                  <td>Deploy release package to Production CM, and test it (before going home)</td>
+                  <td> <select class="Score">
+                      <option value="0">0</option>
+                      <option value="1">1</option>>1</td>
+                  <td form action="/html/tags/html_form_tag_action.cfm" method="post">
+                    <div>
+                      <textarea name="comment" id="note8" style="font-family:sans-serif;font-size:1.2em;">
+                                  </textarea>
+                    </div>
+
+                  </td>
+                </tr>
+                <tr>
+                  <td>Generate QA certification.</td>
+                  <td> <select class="Score">
+                      <option value="0">0</option>
+                      <option value="1">1</option>>1</td>
+                  <td form action="/html/tags/html_form_tag_action.cfm" method="post">
+                    <div>
+                      <textarea name="comment" id="note9" style="font-family:sans-serif;font-size:1.2em;">
+                                  </textarea>
+                    </div>
+
+                  </td>
+                </tr>
+                <thead style="background-color:black;color:white" class="card-header">
+                  <tr>
+                    <th>Deploy Process: <i>(NOC Responsibilities)</i></th>
+                  </tr>
+                </thead>
+                <tr>
+                  <td>Released on time</td>
+                  <td> <select class="Score">
+                      <option value="0">0</option>
+                      <option value="1">1</option>>1</td>
+                  <td form action="/html/tags/html_form_tag_action.cfm" method="post">
+                    <div>
+                      <textarea name="comment" id="note10" style="font-family:sans-serif;font-size:1.2em;">
+                                  </textarea>
+                    </div>
+
+                  </td>
+                </tr>
+                <tr>
+                  <td>Rolled back?</td>
+                  <td form action="/html/tags/html_form_tag_action.cfm" method="post"> <select class="Score">
+                      <option value="0">0</option>
+                      <option value="1">1</option>>1</td>
+                  <td>
+                    <div>
+                      <textarea name="comment" id="note11" style="font-family:sans-serif;font-size:1.2em;">
+                                  </textarea>
+                    </div>
+                  </td>
+                </tr>
+                <thead style="background-color:black;color:white" class="card-header">
+                  <tr>
+                    <th><i>The Morning After</i></th>
+                  </tr>
+                </thead>
+                <tr>
+                  <td>Web team PPT features/bug fixes and replies to all</td>
+                  <td> <select class="Score">
+                      <option value="0">0</option>
+                      <option value="1">1</option>>1</td>
+                  <td form action="/html/tags/html_form_tag_action.cfm" method="post">
+                    <div>
+                      <textarea name="comment" id="note12" style="font-family:sans-serif;font-size:1.2em;">
+                                  </textarea>
+                    </div>
+
+                  </td>
+                </tr>
+                <tr>
+                  <td>Tag release, merge release to master, and merge master to develop</td>
+                  <td> <select class="Score">
+                      <option value="0">0</option>
+                      <option value="1">1</option>>1</td>
+                  <td form action="/html/tags/html_form_tag_action.cfm" method="post">
+                    <div>
+                      <textarea name="comment" id="note13" style="font-family:sans-serif;font-size:1.2em;">
+                                  </textarea>
+                    </div>
+
+                  </td>
+                </tr>
+                <thead style="background-color:black;color:white" class="card-header">
+                  <tr>
+                    <th><i>If Rollback</i></th>
+                  </tr>
+                </thead>
+                <tr>
+                  <td>Complete Rollback</td>
+                  <td> <select class="Score">
+                      <option value="0">0</option>
+                      <option value="1">1</option>>1</td>
+                  <td form action="/html/tags/html_form_tag_action.cfm" method="post">
+                    <div>
+                      <textarea name="comment" id="note14" style="font-family:sans-serif;font-size:1.2em;">
+                                  </textarea>
+                    </div>
+
+                  </td>
+                </tr>
+                <tr>
+                  <td>Locate Master package number from RBR</td>
+                  <td> <select class="Score">
+                      <option value="0">0</option>
+                      <option value="1">1</option>>1</td>
+                  <td form action="/html/tags/html_form_tag_action.cfm" method="post">
+                    <div>
+                      <textarea name="comment" id="note15" style="font-family:sans-serif;font-size:1.2em;">
+                                  </textarea>
+                    </div>
+
+                  </td>
+                </tr>
+                <tr>
+                  <td>Deploy Master Package to CM and CD1</td>
+                  <td> <select class="Score">
+                      <option value="0">0</option>
+                      <option value="1">1</option>>1</td>
+                  <td form action="/html/tags/html_form_tag_action.cfm" method="post">
+                    <div>
+                      <textarea name="comment" id="note16" style="font-family:sans-serif;font-size:1.2em;">
+                                  </textarea>
+                    </div>
+
+                  </td>
+                </tr>
+                <tr>
+                  <td>Notify in CHGand via email that issues were discovered</td>
+                  <td> <select class="Score">
+                      <option value="0">0</option>
+                      <option value="1">1</option>>1</td>
+                  <td form action="/html/tags/html_form_tag_action.cfm" method="post">
+                    <div>
+                      <textarea name="comment" id="note17" style="font-family:sans-serif;font-size:1.2em;">
+                                  </textarea>
+                    </div>
+
+                  </td>
+                </tr>
+                <tr>
+                  <td>Close Window</td>
+                  <td> <select class="Score">
+                      <option value="0">0</option>
+                      <option value="1">1</option>>1</td>
+                  <td form action="/html/tags/html_form_tag_action.cfm" method="post">
+                    <div>
+                      <textarea name="comment" id="note18" style="font-family:sans-serif;font-size:1.2em;">
+                                  </textarea>
+                    </div>
+                    <div id="action-button">
+                      <button id="make-new" class="btn btn-success">Submit</button>
+                    </div>
+                  </td>
+
+                </tr>
+                <thead style="background-color:black;color:white" class="card-header">
+                <tfoot>
+
+                  <th><i>Total</i> <input type="input" id="inc" value="" style="width: 25px;"> out of 19</input></th>
+                  </tr>
+                  </thead>
+
+                </tfoot>
+                <a href="/all" class="btn btn-success btn-lg">
+                  <span class="fa fa-th-list"></span>History</a>
+
+              </form>
+
+            </table>
+            
+            <script src="js/view.js" type="text/javascript"></script>
+
+</body>
+
+</html>
