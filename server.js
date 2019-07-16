@@ -10,8 +10,6 @@ var express = require("express");
 // =============================================================
 var app = express();
 var PORT = process.env.PORT || 8080;
-var mysql = require('mysql');
-var connection = mysql.createConnection(process.env.JAWSDB_URL);
 
 // Sets up the Express app to handle data parsing
 app.use(express.urlencoded({ extended: true }));
@@ -21,15 +19,6 @@ app.use(express.json());
 app.use(express.static("app/public"));
 
 
-connection.connect();
-
-connection.query('SELECT 1 + 1 AS solution', function(err, rows, fields) {
-  if (err) throw err;
-
-  console.log('The solution is: ', rows[0].solution);
-});
-
-connection.end();
 // Routes
 // =============================================================
 require("./app/routes/api-routes.js")(app);
