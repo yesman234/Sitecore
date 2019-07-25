@@ -22,11 +22,6 @@ var Note = sequelize.define("note", {
   note11: Sequelize.STRING,
   note12: Sequelize.STRING,
   note13: Sequelize.STRING,
-  note14: Sequelize.STRING,
-  note15: Sequelize.STRING,
-  note16: Sequelize.STRING,
-  note17: Sequelize.STRING,
-  note18: Sequelize.STRING,
   score: Sequelize.INTEGER
 });
 

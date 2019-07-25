@@ -4,7 +4,7 @@ $.get("/api/all", function(data) {
   // For each note that our server sends us back
   for (var i = 0; i < data.length; i++) {
     // Create a parent div to hold note data
-    var wellSection = $("<table>");
+    var wellSection = $("<table class='table table-dark'>");
     // Add a class to this div: 'well'
     wellSection.addClass("well");
     // Add an id to the well to mark which well it is
@@ -12,8 +12,8 @@ $.get("/api/all", function(data) {
     // Append the well to the well section
     $("#well-section").append(wellSection);
 
-    // Now  we add our note data to the well we just placed on the page
    // Now  we add our score data to the well we just placed on the page
+   
    $("#score-well-" + i).append("<p>Web Team representative for escalation chosen: " + data[i].note + "</p>");
    $("#score-well-" + i).append("<p>Content/CMS Freeze (EoD): " + data[i].note1 + "</p>");
    $("#score-well-" + i).append("<p>Complete rollback package from master + TDS sync (11AM completion): " + data[i].note2 + "</p>");
@@ -28,11 +28,6 @@ $.get("/api/all", function(data) {
    $("#score-well-" + i).append("<p>Rolled back?: " + data[i].note11 + "</p>");
    $("#score-well-" + i).append("<p>Web team PPT features/bug fixes and replies to all: " + data[i].note12 + "</p>");
    $("#score-well-" + i).append("<p>Tag release, merge release to master, and merge master to develop: " + data[i].note13 + "</p>");
-   $("#score-well-" + i).append("<p>Complete Rollback: " + data[i].note14 + "</p>");
-   $("#score-well-" + i).append("<p>Locate Master package number from RBR: " + data[i].note15 + "</p>");
-   $("#score-well-" + i).append("<p>Deploy Master Package to CM and CD1: " + data[i].note16 + "</p>");
-   $("#score-well-" + i).append("<p>Notify in CHGand via email that issues were discovered: " + data[i].note17 + "</p>");
-   $("#score-well-" + i).append("<p>Close Window: " + data[i].note18 + "</p>");
    $("#score-well-" + i).append("<p>Score: " + data[i].score + "</p>");
    $("#score-well-" + i).append("<p>Date: " + data[i].updatedAt + "</p>");
 
