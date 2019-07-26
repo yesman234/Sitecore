@@ -33,14 +33,7 @@ module.exports = function (app) {
 
   // Get all "short" notes (notes 7 or less)
   app.get("/api/notes/low", function (req, res) {
-    Note.findAll({
-      where: {
-        score: {
-          $lte: 7
-        }
-      },
-      order: [["score", "ASC"]]
-    }).then(function (results) {
+    Note.findAll({}).then(function (results) {
       res.json(results);
     });
   });

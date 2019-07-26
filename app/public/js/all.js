@@ -13,8 +13,9 @@ $.get("/api/all", function(data) {
     $("#well-section").append(wellSection);
 
    // Now  we add our score data to the well we just placed on the page
+  //  $('table tr td' + i span).html(data[i].note);
    
-   $("#score-well-" + i).append("<p>Web Team representative for escalation chosen: " + data[i].note + "</p>");
+   $("#score-well-" + i).append("<tr><td><p>Web Team representative for escalation chosen: " + data[i].note + "</p>");
    $("#score-well-" + i).append("<p>Content/CMS Freeze (EoD): " + data[i].note1 + "</p>");
    $("#score-well-" + i).append("<p>Complete rollback package from master + TDS sync (11AM completion): " + data[i].note2 + "</p>");
    $("#score-well-" + i).append("<p>Validate freeze was adhered to after TDS sync: " + data[i].note3 + "</p>");

@@ -18,7 +18,6 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../public/view.html"));
   });
 
-
   // all route loads the all.html page, where all books in the db are displayed
   app.get("/all", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/all.html"));
