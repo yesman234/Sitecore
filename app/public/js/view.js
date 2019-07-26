@@ -47,6 +47,9 @@ $("#make-new").on("click", function(event) {
             note16: $("#note16").val().trim(),
             note17: $("#note17").val().trim(),
             note18: $("#note18").val().trim(),
+            shell: $("#shell").val().trim(),
+            release_Name: $("#release_Name").val().trim(),
+            sprint_Master: $("#sprint_Master").val().trim(),
             score: $("#inc").val().trim(),
             updatedAt: $("#date").val().trim(),
   };
@@ -79,6 +82,9 @@ $("#make-new").on("click", function(event) {
   $("#note16").val("");
   $("#note17").val("");
   $("#note18").val("");
+  $("#shell").val("");
+  $("#release_name").val("");
+  $("#sprint_Master").val("");
   $("#inc").val("");
 
 });

@@ -29,8 +29,10 @@ $.get("/api/all", function(data) {
    $("#score-well-" + i).append("<p>Rolled back?: " + data[i].note11 + "</p>");
    $("#score-well-" + i).append("<p>Web team PPT features/bug fixes and replies to all: " + data[i].note12 + "</p>");
    $("#score-well-" + i).append("<p>Tag release, merge release to master, and merge master to develop: " + data[i].note13 + "</p>");
-   $("#score-well-" + i).append("<p>Score: " + data[i].score + "</p>");
-   $("#score-well-" + i).append("<p>Date: " + data[i].updatedAt + "</p>");
+   $("#score-well-" + i).append("<p>Date: " + data[i].shell + "</p>");
+   $("#score-well-" + i).append("<p>Release_name: " + data[i].release_Name + "</p>");
+   $("#score-well-" + i).append("<p>Sprint_master: " + data[i].sprint_Master + "</p>");
+   $("#score-well-" + i).append("<p>Score: " + data[i].score + "</p></td></tr>");
 
 
    console.log(data);

@@ -62,6 +62,9 @@ module.exports = function (app) {
       note16: req.body.note16,
       note17: req.body.note17,
       note18: req.body.note18,
+      shell: req.body.date_Time,
+      release_Name: req.body.release_Name,
+      sprint_Master: req.body.sprint_Master,
       score: req.body.score
     }).then(function (results) {
       res.json(results);
