@@ -1,8 +1,7 @@
 // The code in add.js handles what happens when the user clicks the "Add a NotenewNote" button.
 
 $(document).ready(function(){
-
-  document.getElementById("date").innerHTML = Date();
+  // Data Picker Initialization
 
       var sum = 0;
   $("select.Score").change(function(){
@@ -15,12 +14,12 @@ $(document).ready(function(){
       document.getElementById('inc').value = sum;
   });
 });
-var currentDate = new Date();
-var date = currentDate.getDate();
-var month = currentDate.getMonth(); //Be careful! January is 0 not 1
-var year = currentDate.getFullYear();
 
-var dateString = date + "-" +(month + 1) + "-" + year;
+$('#shell').pickadate({
+  selectMonths: true, 
+        selectYears: 20 
+  });
+  $('select').material_select();
 
 // When user clicks add-btn
 $("#make-new").on("click", function(event) {
@@ -53,7 +52,7 @@ $("#make-new").on("click", function(event) {
             score: $("#inc").val().trim(),
             updatedAt: $("#date").val().trim(),
   };
-
+  
   // Send an AJAX POST-request with jQuery
   $.post("/api/new", newNote)
     // On success, run the following code

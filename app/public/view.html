@@ -5,9 +5,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
   <script src="https://code.jquery.com/jquery.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css" /> 
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+<link rel="stylesheet" href="styles/low.css" />
+
+
 
   <title>Document</title>
 </head>
@@ -340,7 +347,10 @@
                   <a href="/low" class="btn btn-success btn-sm">
                     <span></span>Chart</a>
                     <td>
-                      Date: <input id="shell" placeholder="Enter Date">
+                        <div class="md-form">
+                            <input placeholder="Selected date" type="text" id="shell" class="form-control datepicker">
+                            <label for="shell"></label>
+                          </div>
                       Release Name:<input id="release_Name" placeholder="Enter Release Name">
                       Sprint Master:<input id="sprint_Master" placeholder="Enter Sprint Master">
                     </td>
