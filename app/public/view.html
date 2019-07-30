@@ -28,9 +28,19 @@
             <i class="fa fa-align-justify" id="date"></i> Release Web HotFix</div>
           <div class="card-header">
             <i class="fa fa-align-justify"></i>Sitecore Release Scorecard</div>
+            <td><div class="container">
+                <div class="md-form">
+                    <input placeholder="Enter date of the release" type="text" id="shell" class="form-control datepicker">
+                    <label for="shell"></label>
+                  </div>
+                </div>
+              Release Name:<input id="release_Name" placeholder="Enter Release Name">
+              Sprint Master:<input id="sprint_Master" placeholder="Enter Sprint Master">
+            </td>
           <div class="card-body">
 
             <table class="table table-responsive-sm">
+              
               <thead>
                 <tr>
                   <th>Step</th>
@@ -38,6 +48,7 @@
                   <th>Exception(1 or 0)</th>
                 </tr>
               </thead>
+              
               <!-- wwrap entire table in form  -->
               <thead style="background-color:black;color:white" class="card-header">
                 <tr>
@@ -53,7 +64,7 @@
                   </select>
                   <td form action="/html/tags/html_form_tag_action.cfm" method="post">
                     <form>
-                      <textarea name="comment" id="note" style="font-family:sans-serif;font-size:1.2em;">
+                      <textarea rows="5" cols="50"name="comment" id="note" style="font-family:sans-serif;font-size:1.2em;">
                             </textarea>
 
 
@@ -346,14 +357,7 @@
                   <span class="fa fa-th-list"></span>History</a>
                   <a href="/low" class="btn btn-success btn-sm">
                     <span></span>Chart</a>
-                    <td>
-                        <div class="md-form">
-                            <input placeholder="Selected date" type="text" id="shell" class="form-control datepicker">
-                            <label for="shell"></label>
-                          </div>
-                      Release Name:<input id="release_Name" placeholder="Enter Release Name">
-                      Sprint Master:<input id="sprint_Master" placeholder="Enter Sprint Master">
-                    </td>
+                    
               </form>
 
             </table>
