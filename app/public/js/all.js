@@ -15,7 +15,7 @@ $.get("/api/all", function(data) {
    // Now  we add our score data to the well we just placed on the page
   //  $('table tr td' + i span).html(data[i].note);
    
-   $("#score-well-" + i).append("<tr><td><p>Web Team representative for escalation chosen: " + data[i].note + "</p>");
+   $("#score-well-" + i).append("<tr><td>Web Team representative for escalation chosen: " + data[i].note + "</td></tr>");
    $("#score-well-" + i).append("<p>Content/CMS Freeze (EoD): " + data[i].note1 + "</p>");
    $("#score-well-" + i).append("<p>Complete rollback package from master + TDS sync (11AM completion): " + data[i].note2 + "</p>");
    $("#score-well-" + i).append("<p>Validate freeze was adhered to after TDS sync: " + data[i].note3 + "</p>");
@@ -32,7 +32,7 @@ $.get("/api/all", function(data) {
    $("#score-well-" + i).append("<p>Date: " + data[i].shell + "</p>");
    $("#score-well-" + i).append("<p>Release_name: " + data[i].release_Name + "</p>");
    $("#score-well-" + i).append("<p>Sprint_master: " + data[i].sprint_Master + "</p>");
-   $("#score-well-" + i).append("<p>Score: " + data[i].score + "</p></td></tr>");
+   $("#score-well-" + i).append("<p>Score: " + data[i].score + "</p>");
 
 
    console.log(data);

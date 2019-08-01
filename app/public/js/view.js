@@ -87,3 +87,8 @@ $("#make-new").on("click", function(event) {
   $("#inc").val("");
 
 });
+function yourFunction(){
+  var action_src = "http://localhost:8000/test/" + document.getElementsByName("keywords")[0].value;
+  var your_form = document.getElementById('your_form');
+  your_form.action = action_src ;
+}

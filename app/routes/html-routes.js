@@ -29,8 +29,8 @@ module.exports = function(app) {
   });
 
   // long route loads the long.html page, where long books in the db are displayed
-  app.get("/high", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/high.html"));
+  app.get("/test", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/comp.html"));
   });
 
 };
