@@ -29,10 +29,10 @@ $.get("/api/all", function(data) {
   //  $("#score-well-" + i).append("<p>Rolled back?: " + data[i].note11 + "</p>");
   //  $("#score-well-" + i).append("<p>Web team PPT features/bug fixes and replies to all: " + data[i].note12 + "</p>");
   //  $("#score-well-" + i).append("<p>Tag release, merge release to master, and merge master to develop: " + data[i].note13 + "</p>");
-   $("#score-well-" + i).append("<th>Date: " + data[i].shell + "</th>");
-   $("#score-well-" + i).append("<th>Release_name: " + data[i].release_Name + "</th>");
-   $("#score-well-" + i).append("<th>Sprint_master: " + data[i].sprint_Master + "</th>");
-   $("#score-well-" + i).append("<th>Score: " + data[i].score + "</th>");
+   $("#score-well-" + i).append("<td><a href='http://www.google.com'>Date: " + data[i].shell  + "<td>Release_name: "+data[i].release_Name +"<td>Sprint_master: "+data[i].sprint_Master + "<td>Score: "+data[i].score+"</td></td></td></td>");
+  //  $("#score-well-" + i).append("<td>Release_name: " + data[i].release_Name + "</td>");
+  //  $("#score-well-" + i).append("<td>Sprint_master: " + data[i].sprint_Master + "</td>");
+  //  $("#score-well-" + i).append("<td>Score: " + data[i].score + "</a></td></tr>");
 
 
    console.log(data);
