@@ -20,3 +20,8 @@
   background-color: #4CAF50;
   color: white;
 }
+.card-header{
+	display: inline-block;
+	padding: 5px;
+	background: red;
+}

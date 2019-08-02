@@ -27,6 +27,7 @@ var Note = sequelize.define("note", {
   note16: Sequelize.STRING,
   note17: Sequelize.STRING,
   note18: Sequelize.STRING,
+  url:Sequelize.STRING,
   shell: Sequelize.STRING,
   release_Name: Sequelize.STRING,
   sprint_Master: Sequelize.STRING,
