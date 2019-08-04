@@ -14,7 +14,7 @@ $.get("/api/all", function(data) {
 
    // Now  we add our score data to the well we just placed on the page
 
-   $("#score-well-" + i).append("<td>Date: " + data[i].shell  +"<td>Date: " + data[i].url  + "<td>Release_name: "+data[i].release_Name +"<td>Sprint_master: "+data[i].sprint_Master + "<td>Score: "+data[i].score+"</td></td></td></td>");
+   $("#score-well-" + i).append("<td>Date: " + data[i].shell   + "<td>Release_name: "+data[i].release_Name +"<td>Sprint_master: "+data[i].sprint_Master + "<td>Score: "+data[i].score+"</td></td></td></td>");
 
 
 
