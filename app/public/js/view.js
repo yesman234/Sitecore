@@ -1,5 +1,6 @@
 // The code in add.js handles what happens when the user clicks the "Add a NotenewNote" button.
-
+//https://docs.google.com/spreadsheets/d/1qWl08msFS73g4mWqwaz_IQw12P2ioNKT63ldaxcWE8M/edit#gid=1775973287
+//new link to new layout and need to specify either hot fix, or release check box.
 $(document).ready(function(){
   // Data Picker Initialization
 

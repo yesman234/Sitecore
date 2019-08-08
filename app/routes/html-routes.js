@@ -22,9 +22,9 @@ module.exports = function(app) {
   app.get("/all", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/all.html"));
   });
-  app.get("/api/"+ data.id, function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/view.html"));
-  });
+  // app.get("/api/"+ data.id, function(req, res) {
+  //   res.sendFile(path.join(__dirname, "../public/view.html"));
+  // });
   // short route loads the short.html page, where short books in the db are displayed
   app.get("/low", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/low.html"));
