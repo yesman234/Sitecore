@@ -43,10 +43,6 @@ $("#make-new").on("click", function(event) {
             note12: $("#note12").val().trim(),
             note13: $("#note13").val().trim(),
             note14: $("#note14").val().trim(),
-            note15: $("#note15").val().trim(),
-            note16: $("#note16").val().trim(),
-            note17: $("#note17").val().trim(),
-            note18: $("#note18").val().trim(),
             shell: $("#shell").val().trim(),
             release_Name: $("#release_Name").val().trim(),
             sprint_Master: $("#sprint_Master").val().trim(),
@@ -78,10 +74,6 @@ $("#make-new").on("click", function(event) {
   $("#note12").val("");
   $("#note13").val("");
   $("#note14").val("");
-  $("#note15").val("");
-  $("#note16").val("");
-  $("#note17").val("");
-  $("#note18").val("");
   $("#shell").val("");
   $("#release_name").val("");
   $("#sprint_Master").val("");
