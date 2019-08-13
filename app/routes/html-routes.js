@@ -22,9 +22,6 @@ module.exports = function(app) {
   app.get("/all", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/all.html"));
   });
-  // app.get("/api/"+ data.id, function(req, res) {
-  //   res.sendFile(path.join(__dirname, "../public/view.html"));
-  // });
   
   // short route loads the short.html page, where short books in the db are displayed
   app.get("/low", function(req, res) {
@@ -33,9 +30,7 @@ module.exports = function(app) {
 
   // long route loads the long.html page, where long books in the db are displayed
   app.get("/test/", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/comp.html"));
+    res.send("hi");
   });
-  // app.get("/test/:id", function(req, res) {
-  //   res.sendFile(path.join(__dirname, "../public/comp.html"));
-  // });
+  
 };

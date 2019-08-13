@@ -10,10 +10,22 @@ $(document).ready(function(){
       var selectedScore = $(this).children("option:selected").val();
       var selectedScorenum=parseInt(selectedScore);
       sum += selectedScorenum;
-      sumCal=(sum/15)+"%";
-      console.log(sumCal);
+      sumCal=(sum/14)*100;
+      sumCal=sumCal.toFixed(2)+"%";
       document.getElementById('inc').value = sum;
+      $('#sumCali').html(sumCal);
+      var color = 'red';
+      if (!isNaN(sumCal)) {
+        if (sumCal >= .40) {
+            color = 'orange';
+        }
+        if (sumCal >= .60) {
+            color = 'green';
+        }
+        $('#sumCali').css('color', color);
+    }
   });
+  
 });
 
 $('#shell').pickadate({
@@ -54,8 +66,9 @@ $("#make-new").on("click", function(event) {
   $.post("/api/new", newNote)
     // On success, run the following code
     .then(function(data) {
-      // Log the data we found
-      console.log(data);
+      // CREATE NEW ROUTES DYNAMICALLY
+      
+      ;
     });
 
   // Empty each input box by replacing the value with an empty string
