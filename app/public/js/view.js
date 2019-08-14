@@ -1,73 +1,78 @@
-// The code in add.js handles what happens when the user clicks the "Add a NotenewNote" button.
+// The code in view.js handles what happens when the user clicks the "Add a NotenewNote" button.
 //https://docs.google.com/spreadsheets/d/1qWl08msFS73g4mWqwaz_IQw12P2ioNKT63ldaxcWE8M/edit#gid=1775973287
 //new link to new layout and need to specify either hot fix, or release check box.
-$(document).ready(function(){
+$(document).ready(function () {
   // Data Picker Initialization
 
-      var sum = 0;
-  $("select.Score").change(function(){
+  var sum = 0;
+  $("select.Score").change(function () {
 
-      var selectedScore = $(this).children("option:selected").val();
-      var selectedScorenum=parseInt(selectedScore);
-      sum += selectedScorenum;
-      sumCal=(sum/14)*100;
-      sumCal=sumCal.toFixed(2)+"%";
-      document.getElementById('inc').value = sum;
-      $('#sumCali').html(sumCal);
-      var color = 'red';
-      if (!isNaN(sumCal)) {
-        if (sumCal >= .40) {
-            color = 'orange';
-        }
-        if (sumCal >= .60) {
-            color = 'green';
-        }
-        $('#sumCali').css('color', color);
+    var selectedScore = $(this).children("option:selected").val();
+    var selectedScorenum = parseInt(selectedScore);
+    sum += selectedScorenum;
+    sumCal = (sum / 15) * 100;
+    if (sumCal <= 40) {
+      $('#sumCali').css({ "color": "red"});
     }
+    if (sumCal >= 60) {
+      $('#sumCali').css({ "color": "orange"});
+    }
+    if (sumCal >= 70) {
+      $('#sumCali').css({ "color": "yellow"});
+    }
+    if (sumCal >= 80) {
+      $('#sumCali').css({ "color": "green"});
+    }
+    if (sumCal >= 90) {
+      $('#sumCali').css({ "color": "indigo"});
+    }
+    sumCal = sumCal.toFixed(2) + "%";
+    document.getElementById('inc').value = sum;
+    
+    $('#sumCali').html(sumCal);
   });
-  
+
 });
 
 $('#shell').pickadate({
-  selectMonths: true, 
-        selectYears: 20 
-  });
-  $('select').material_select();
+  selectMonths: true,
+  selectYears: 20
+});
+$('select').material_select();
 
 // When user clicks add-btn
-$("#make-new").on("click", function(event) {
+$("#make-new").on("click", function (event) {
   event.preventDefault();
 
   // Make a newNote object
   var newNote = {
-            note: $("#note").val().trim(),
-            note1: $("#note1").val().trim(),
-            note2: $("#note2").val().trim(),
-            note3: $("#note3").val().trim(),
-            note4: $("#note4").val().trim(),
-            note5: $("#note5").val().trim(),
-            note6: $("#note6").val().trim(),
-            note7: $("#note7").val().trim(),
-            note8: $("#note8").val().trim(),
-            note9: $("#note9").val().trim(),
-            note10: $("#note10").val().trim(),
-            note11: $("#note11").val().trim(),
-            note12: $("#note12").val().trim(),
-            note13: $("#note13").val().trim(),
-            note14: $("#note14").val().trim(),
-            shell: $("#shell").val().trim(),
-            release_Name: $("#release_Name").val().trim(),
-            sprint_Master: $("#sprint_Master").val().trim(),
-            score: $("#inc").val().trim(),
-            updatedAt: $("#date").val().trim(),
+    note: $("#note").val().trim(),
+    note1: $("#note1").val().trim(),
+    note2: $("#note2").val().trim(),
+    note3: $("#note3").val().trim(),
+    note4: $("#note4").val().trim(),
+    note5: $("#note5").val().trim(),
+    note6: $("#note6").val().trim(),
+    note7: $("#note7").val().trim(),
+    note8: $("#note8").val().trim(),
+    note9: $("#note9").val().trim(),
+    note10: $("#note10").val().trim(),
+    note11: $("#note11").val().trim(),
+    note12: $("#note12").val().trim(),
+    note13: $("#note13").val().trim(),
+    note14: $("#note14").val().trim(),
+    shell: $("#shell").val().trim(),
+    release_Name: $("#release_Name").val().trim(),
+    sprint_Master: $("#sprint_Master").val().trim(),
+    score: $("#inc").val().trim(),
+    updatedAt: $("#date").val().trim(),
   };
-  
+
   // Send an AJAX POST-request with jQuery
   $.post("/api/new", newNote)
     // On success, run the following code
-    .then(function(data) {
-      // CREATE NEW ROUTES DYNAMICALLY
-      
+    .then(function (data) {
+      console.log(data);
       ;
     });
 

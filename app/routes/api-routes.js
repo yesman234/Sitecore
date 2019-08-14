@@ -16,7 +16,14 @@ module.exports = function (app) {
     });
   });
 
-
+// CREATE NEW ROUTES DYNAMICALLY
+for (let i = 0; i < Note.length; i++){
+  app.get("/"+Note[i], function(req, res){
+      res.writeHead(200, {'Content-Type': 'text/plain'});
+      res.write(data[i]);
+      res.end();
+  });
+}
   // Get all "high scores" notes (7 or more)
   app.get("/api/notes/high", function (req, res) {
     Note.findAll({
