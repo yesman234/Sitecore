@@ -15,15 +15,21 @@ module.exports = function (app) {
       res.json(results);
     });
   });
-
-// CREATE NEW ROUTES DYNAMICALLY
-for (let i = 0; i < Note.length; i++){
-  app.get("/"+Note[i], function(req, res){
-      res.writeHead(200, {'Content-Type': 'text/plain'});
-      res.write(data[i]);
-      res.end();
+  // create this fucniton to query one object 
+  app.get("/api/results", function (req, res) {
+    //right here instead of find all it should be select 1 but using sequilize syntax
+    Note.findAll({}).then(function (results) {
+      res.json(results);
+    });
   });
-}
+// CREATE NEW ROUTES DYNAMICALLY
+// for (let i = 0; i < Note.length; i++){
+//   app.get("/"+Note[i], function(req, res){
+//       res.writeHead(200, {'Content-Type': 'text/plain'});
+//       res.write(data[i]);
+//       res.end();
+//   });
+// }
   // Get all "high scores" notes (7 or more)
   app.get("/api/notes/high", function (req, res) {
     Note.findAll({

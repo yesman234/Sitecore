@@ -4,7 +4,7 @@ $.get("/api/all", function(data) {
   // For each note that our server sends us back
   for (var i = 0; i < data.length; i++) {
     // Create a parent div to hold note data
-    var wellSection = $("<a table class='table table-fluid'>");
+    var wellSection = $("<a table class='table table-fluid' href='https://www.google.com'>");
     // Add a class to this div: 'well'
     wellSection.addClass("well");
     // Add an id to the well to mark which well it is
@@ -14,7 +14,10 @@ $.get("/api/all", function(data) {
 
    // Now  we add our score data to the well we just placed on the page
 
-   $("#score-well-" + i).append("<td>Date: " + data[i].shell + "<td>Release_name: "+data[i].release_Name +"<td>Sprint_master: "+data[i].sprint_Master + "<td>Score: "+data[i].score+"</td></td></td></td>");
+   $("#score-well-" + i).append("<td>Date: " +
+      data[i].shell + "<td>Release_name: "+data[i].release_Name 
+        +"<td>Sprint_master: "+data[i].sprint_Master + "<td>Score: "
+          +data[i].score+"</td></td></td></td>");
 
 // CREATE NEW ROUTES DYNAMICALLY
 

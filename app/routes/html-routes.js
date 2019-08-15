@@ -5,7 +5,7 @@
 // Dependencies
 // =============================================================
 var path = require("path");
-
+var apiRoutes =  require("api-routes");
 
 // Routes
 // =============================================================
@@ -22,7 +22,13 @@ module.exports = function(app) {
   app.get("/all", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/all.html"));
   });
-  
+  app.get("/results/:id", function(req, res){
+    let ids = req.params.id;
+    //unclear about this part...
+    apiRoutes(ids).then()
+    
+    res.sendFile(path.join(__dirname, "../public/results.html"));
+  })
   // short route loads the short.html page, where short books in the db are displayed
   app.get("/low", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/low.html"));
