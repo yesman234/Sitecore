@@ -18,7 +18,7 @@ module.exports = function (app) {
     });
   });
   // create this fucniton to query one object 
-  app.get("/api/notes/results", function (req, res) {
+  app.get("/api/results/:id", function (req, res) {
     //right here instead of find all it should be select 1 but using sequilize syntax
     Note.findAll({
       where: {
