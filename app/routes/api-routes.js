@@ -13,30 +13,31 @@ module.exports = function (app) {
   app.get("/api/all", function (req, res) {
     Note.findAll({}).then(function (results) {
       res.json(results);
+      console.log(req.params.id);
+
     });
   });
   // create this fucniton to query one object 
-  app.get("/api/results", function (req, res) {
+  app.get("/api/notes/results", function (req, res) {
     //right here instead of find all it should be select 1 but using sequilize syntax
-    Note.findAll({}).then(function (results) {
+    Note.findAll({
+      where: {
+        id: req.params.id
+      }
+
+    }).then(function (results) {
       res.json(results);
     });
   });
-// CREATE NEW ROUTES DYNAMICALLY
-// for (let i = 0; i < Note.length; i++){
-//   app.get("/"+Note[i], function(req, res){
-//       res.writeHead(200, {'Content-Type': 'text/plain'});
-//       res.write(data[i]);
-//       res.end();
-//   });
-// }
+
   // Get all "high scores" notes (7 or more)
   app.get("/api/notes/high", function (req, res) {
     Note.findAll({
+      from:{
       where: {
         score: {
           $gte: 7
-        }
+        }}
       },
       order: [["score", "DESC"]]
     }).then(function (results) {

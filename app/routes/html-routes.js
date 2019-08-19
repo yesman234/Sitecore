@@ -5,7 +5,7 @@
 // Dependencies
 // =============================================================
 var path = require("path");
-var apiRoutes =  require("api-routes");
+// const apiRoutes = require("api-routes");
 
 // Routes
 // =============================================================
@@ -23,9 +23,9 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../public/all.html"));
   });
   app.get("/results/:id", function(req, res){
-    let ids = req.params.id;
+    // let ids = req.params.id;
     //unclear about this part...
-    apiRoutes(ids).then()
+    // apiRoutes(ids).then()
     
     res.sendFile(path.join(__dirname, "../public/results.html"));
   })

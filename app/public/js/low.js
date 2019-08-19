@@ -1,5 +1,5 @@
 // Make a get request to our api route that will return every "low" score (7 or less)
-$.get("/api/notes/low", function(data) {
+$.get("/api/notes/results", function(data) {
 
   // For each score that our server sends us back
   for (var i = 0; i < data.length; i++) {
