@@ -18,9 +18,7 @@ $.get("/api/results/"+window.location.href.split("/").pop(), function(data) {
         data[i].shell + "<td>Release_name: "+data[i].release_Name 
           +"<td>Sprint_master: "+data[i].sprint_Master + "<td>Id: "+data[i].id + "<td>Score: "
             +data[i].score+"</td></td></td></td>");
-  
-  // CREATE NEW ROUTES DYNAMICALLY
-  
+    
   
      console.log(data);
     }
