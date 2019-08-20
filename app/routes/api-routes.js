@@ -31,12 +31,12 @@ module.exports = function (app) {
   });
 
   // Get all "high scores" notes (7 or more)
-  app.get("/api/notes/high", function (req, res) {
+  app.get("/api/low/low", function (req, res) {
     Note.findAll({
       from:{
       where: {
         score: {
-          $gte: 7
+          $lte: 7
         }}
       },
       order: [["score", "DESC"]]

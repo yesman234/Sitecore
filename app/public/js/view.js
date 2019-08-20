@@ -11,6 +11,7 @@ $(document).ready(function () {
     var selectedScorenum = parseInt(selectedScore);
     sum += selectedScorenum;
     sumCal = (sum / 15) * 100;
+
     if (sumCal <= 40) {
       $('#sumCali').css({ "color": "red"});
     }
@@ -43,6 +44,8 @@ $('select').material_select();
 // When user clicks add-btn
 $("#make-new").on("click", function (event) {
   event.preventDefault();
+  location.reload();
+
 
   // Make a newNote object
   var newNote = {
@@ -75,26 +78,4 @@ $("#make-new").on("click", function (event) {
       console.log(data);
       ;
     });
-
-  // Empty each input box by replacing the value with an empty string
-  $("#note").val("");
-  $("#note1").val("");
-  $("#note2").val("");
-  $("#note3").val("");
-  $("#note4").val("");
-  $("#note5").val("");
-  $("#note6").val("");
-  $("#note7").val("");
-  $("#note8").val("");
-  $("#note9").val("");
-  $("#note10").val("");
-  $("#note11").val("");
-  $("#note12").val("");
-  $("#note13").val("");
-  $("#note14").val("");
-  $("#shell").val("");
-  $("#release_name").val("");
-  $("#sprint_Master").val("");
-  $("#inc").val("");
-
 });

@@ -16,7 +16,7 @@ $.get("/api/all", function(data) {
 
    $("#score-well-" + i).append("<td>Date: " +
       data[i].shell + "<td>Release_name: "+data[i].release_Name 
-        +"<td>Sprint_master: "+data[i].sprint_Master + "<td>Id: "+data[i].id + "<td>Score: "
+        +"<td>Sprint_master: "+data[i].sprint_Master + "<td>Score: "
           +data[i].score+"</td></td></td></td>");
 
 // CREATE NEW ROUTES DYNAMICALLY
