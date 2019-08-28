@@ -14,7 +14,6 @@ module.exports = function (app) {
     Note.findAll({}).then(function (results) {
       res.json(results);
       console.log(req.params.id);
-
     });
   });
   // create this fucniton to query one object 
@@ -33,21 +32,25 @@ module.exports = function (app) {
   // Get all "high scores" notes (7 or more)
   app.get("/api/low/low", function (req, res) {
     Note.findAll({
-      from:{
-      where: {
-        score: {
-          $lte: 14
-        }}
+      from: {
+        where: {
+          score: {
+            $lte: 14
+          }
+        }
       },
       order: [["score", "DESC"]]
     }).then(function (results) {
       res.json(results);
     });
   });
-
-  // Get all "short" notes (notes 7 or less)
-  app.get("/api/notes/low", function (req, res) {
-    Note.findAll({}).then(function (results) {
+  app.get("/api/sort/:id", function (req, res) {
+    //right here instead of find all it should be select 1 but using sequilize syntax
+    Note.findAll({
+      where: {
+        id: req.params.id
+      }
+    }).then(function (results) {
       res.json(results);
     });
   });
