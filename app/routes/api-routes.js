@@ -32,28 +32,12 @@ module.exports = function (app) {
   // Get all "high scores" notes (7 or more)
   app.get("/api/low/low", function (req, res) {
     Note.findAll({
-      from: {
-        where: {
-          score: {
-            $lte: 14
-          }
-        }
-      },
       order: [["score", "DESC"]]
     }).then(function (results) {
       res.json(results);
     });
   });
-  app.get("/api/sort/:id", function (req, res) {
-    //right here instead of find all it should be select 1 but using sequilize syntax
-    Note.findAll({
-      where: {
-        id: req.params.id
-      }
-    }).then(function (results) {
-      res.json(results);
-    });
-  });
+
 
   // Add a Note
   app.post("/api/new", function (req, res) {
