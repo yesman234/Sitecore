@@ -355,8 +355,9 @@ $.get("/api/results/"+window.location.href.split("/").pop(), function(data) {
                        </tfoot>
                        <a href="/all" class="btn btn-success btn-lg">
                          <span class="fa fa-th-list"></span>History</a>
-                       <a href="/low" class="btn btn-success btn-sm">
-                         <span></span>Chart</a>
+                         <a href="/" class="btn btn-success btn-lg">
+                         <span></span>New</a>
+
    
                      </form>
                </table>`);
