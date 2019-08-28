@@ -36,7 +36,7 @@ module.exports = function (app) {
       from:{
       where: {
         score: {
-          $lte: 7
+          $lte: 14
         }}
       },
       order: [["score", "DESC"]]
