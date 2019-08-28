@@ -22,9 +22,7 @@ module.exports = function (app) {
     Note.findAll({
       where: {
         id: req.params.id
-      }
-
-    }).then(function (results) {
+      }}).then(function (results) {
       res.json(results);
     });
   });

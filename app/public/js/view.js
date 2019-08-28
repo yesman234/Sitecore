@@ -40,7 +40,23 @@ $('#shell').pickadate({
   selectYears: 20
 });
 $('select').material_select();
+function task(e)
+{
+  var hotfix=0;
+  if(e.target.checked)
+  {
+    return hotfix+=1
+    ///do post request with 1 in parameter
+    console.log("do post request with 1 in parameter");
+  }
+  else
+  {
+    return hotfix+=0
 
+    ///do post request with 0 parameter
+    console.log("do post request with 0 parameter");
+  }
+}
 // When user clicks add-btn
 $("#make-new").on("click", function (event) {
   event.preventDefault();
@@ -69,6 +85,7 @@ $("#make-new").on("click", function (event) {
     sprint_Master: $("#sprint_Master").val().trim(),
     score: $("#inc").val().trim(),
     updatedAt: $("#date").val().trim(),
+    hotfix: $("#cbx").val().trim(),
   };
 
   // Send an AJAX POST-request with jQuery
