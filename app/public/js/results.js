@@ -38,7 +38,7 @@ $.get("/api/results/"+window.location.href.split("/").pop(), function(data) {
          <div class="col-lg">
          <div class="card">
          <div class="card-header" style="background-color:black;color:white">
-           <i class="fa fa-align-justify" id="date"></i> Release Web Scorecard <input type="checkbox" id="cbx" onclick="task(event);" placeholder="${data[i].hotfix}">
+           <i class="fa fa-align-justify" id="date"></i> Release Web Scorecard <input type="checkbox" id="cbx" onclick="task(event);" placeholder="${data[i].hotfix}">${data[i].hotfix}
            <label for="cbx" class="check"style="color:white">Hot fix?
            </label></div>
          <div class="card-header">
