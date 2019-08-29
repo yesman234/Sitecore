@@ -52,11 +52,11 @@ function task(e)
   else
   {
     return hotfix+=0
-
     ///do post request with 0 parameter
     console.log("do post request with 0 parameter");
   }
 }
+
 // When user clicks add-btn
 $("#make-new").on("click", function (event) {
   event.preventDefault();
