@@ -1,15 +1,8 @@
-<<<<<<< HEAD
-// The code in view.js handles what happens when the user clicks the "Add a NotenewNote" button.
-//https://docs.google.com/spreadsheets/d/1qWl08msFS73g4mWqwaz_IQw12P2ioNKT63ldaxcWE8M/edit#gid=1775973287
-//new link to new layout and need to specify either hot fix, or release check box.
 $(document).ready(function () {
   // Data Picker Initialization
 
   var sum = 0;
   $("select.Score").change(function () {
-=======
-$(document).ready(function(){
->>>>>>> 6fa8a63944006cf4d20770b817503883ef5d815a
 
     var selectedScore = $(this).children("option:selected").val();
     var selectedScorenum = parseInt(selectedScore);
@@ -38,13 +31,6 @@ $(document).ready(function(){
   });
 
 });
-<<<<<<< HEAD
-=======
-var currentDate = new Date();
-var date = currentDate.getDate();
-var month = currentDate.getMonth(); 
-var year = currentDate.getFullYear();
->>>>>>> 6fa8a63944006cf4d20770b817503883ef5d815a
 
 $('#shell').pickadate({
   selectMonths: true,
