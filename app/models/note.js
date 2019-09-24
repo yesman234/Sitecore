@@ -26,7 +26,7 @@ var Note = sequelize.define("note", {
   shell: Sequelize.STRING,
   release_Name: Sequelize.STRING,
   sprint_Master: Sequelize.STRING,
-  hotfix: Sequelize.INTEGER,
+  hotfix: Sequelize.BOOLEAN,
   score: Sequelize.INTEGER
 });
 
