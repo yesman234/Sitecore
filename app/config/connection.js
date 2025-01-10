@@ -3,11 +3,10 @@
 var Sequelize = require("sequelize");
 
 // Creates mySQL connection using Sequelize, the empty string in the third argument spot is our password.
-var sequelize = new Sequelize("pge9xop8riypptn3", "boaxyrqv2p9n4a40", "", {
-  host: "e764qqay0xlsc4cz.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
+var sequelize = new Sequelize("sitecore_library", "root", "Garagec250", {
   port: 3306,
-  user: "boaxyrqv2p9n4a40",
-  password: "g835x4yrb385nx6w",
+  user: "root",
+  password: "Garagec250",
   dialect: "mysql",
   pool: {
     max: 20,
@@ -15,6 +14,7 @@ var sequelize = new Sequelize("pge9xop8riypptn3", "boaxyrqv2p9n4a40", "", {
     idle: 10000
   }
 });
+
 
 // // Exports the connection for other files to use
 module.exports = sequelize;
