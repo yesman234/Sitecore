@@ -4,7 +4,7 @@ services:
   name: Sitecore
   runtime: node
   repo: https://github.com/yesman234/Sitecore
-  plan: free
+  plan: starter
   region: oregon
   buildCommand: npm install
   startCommand: node server.js
