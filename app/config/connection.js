@@ -6,6 +6,7 @@ var Sequelize = require("sequelize");
 var sequelize = new Sequelize("sitecore_library", "root", "password", {
   // change port # alter user w/ preveliges flushed
   port: 3306,
+  ip: "127.0.0.1",
   user: "root",
   password: "password",
   dialect: "mysql",

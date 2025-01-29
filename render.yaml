@@ -1,3 +1,11 @@
+
+version: "1"
+name: mysql
+plan: standard
+env: docker
+autoDeploy: false
+disk: mysql
+mountPath: /var/lib/mysql
 # Exported from Render on 2025-01-29T00:30:35Z
 services:
 - type: web
@@ -10,4 +18,3 @@ services:
   region: oregon
   buildCommand: npm install
   startCommand: npm start
-version: "1"
