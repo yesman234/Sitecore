@@ -12,3 +12,14 @@ services:
   region: oregon
   buildCommand: npm install
   startCommand: npm start
+  envVarGroups:
+- name: mysql
+  envVars:
+  - key: MYSQL_DATABASE
+    value: sitecore_library
+  - key: MYSQL_USER
+    value: root
+  - key: password
+    generateValue: true
+  - key: password
+    generateValue: true
