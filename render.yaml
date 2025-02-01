@@ -8,7 +8,7 @@ services:
   repo: https://github.com/yesman234/Sitecore
   plan: starter
   envVars:
-  - fromGroup: production
+  - fromGroup: NodeJS_mysql
   region: oregon
   buildCommand: npm install
   startCommand: npm start
