@@ -19,6 +19,7 @@
     "pug": "^3.0.3",
     "sass": "^1.22.10",
     "sequelize": "^6.37.5",
+    "tedious": "^18.6.1",
     "yaml": "^2.7.0"
   },
   "devDependencies": {
