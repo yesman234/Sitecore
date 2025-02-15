@@ -4,7 +4,7 @@ version: "1"
 services:
 - type: web
   name: Sitecore
-  runtime: node
+  runtime: Docker
   repo: https://github.com/yesman234/Sitecore
   plan: starter
   envVars:
@@ -18,7 +18,7 @@ services:
   - key: MYSQL_DATABASE
     value: sitecore_library
   - key: MYSQL_USER
-    value: root
+    value: data_analyst
   - key: password
     generateValue: true
   - key: password

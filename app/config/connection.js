@@ -5,7 +5,7 @@ var Sequelize = require("sequelize");
 // with database, username, and password in the options object
 //Server=localhost,1433;Initial Catalog=master;User Id=sa;Password=password;TrustServerCertificate=true
 // Creates mySQL connection using Sequelize, the empty string in the third argument spot is our password.
-var sequelize = new Sequelize("sitecore_library", "root", "password", {
+var sequelize = new Sequelize("sitecore_library", "data_analyst", "password", {
   // change port # alter user w/ preveliges flushed
   port: 3306,
   dialect: "mysql",
