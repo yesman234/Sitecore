@@ -1,10 +1,6 @@
-// Dependencies
-// =============================================================
 
-// Sequelize (capital) references the standard library
-var Sequelize = require("sequelize");
-// sequelize (lowercase) references my connection to the DB.
 var sequelize = require("../config/connection.js");
+const { DataTypes, Sequelize  } = require('sequelize'); // Import the built-in data types
 
 // Creates a "Note" model that matches up with DB
 var Note = sequelize.define("note", {
