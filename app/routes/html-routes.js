@@ -27,7 +27,9 @@ module.exports = function(app) {
   app.get("/low", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/low.html"));
   });
-
+app.get("/high", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/high.html"));
+  });
   app.get("/test/", function(req, res) {
     res.send(req.params);
   });

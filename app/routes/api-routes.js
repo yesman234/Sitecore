@@ -30,6 +30,14 @@ module.exports = function (app) {
   // Get all "high scores" notes (7 or more)
   app.get("/api/low/low", function (req, res) {
     Note.findAll({
+      order: [["score", "ASC"]]
+    }).then(function (results) {
+      res.json(results);
+    });
+  });
+    // Get all "high scores" notes (7 or more)
+  app.get("/api/high/high", function (req, res) {
+    Note.findAll({
       order: [["score", "DESC"]]
     }).then(function (results) {
       res.json(results);
